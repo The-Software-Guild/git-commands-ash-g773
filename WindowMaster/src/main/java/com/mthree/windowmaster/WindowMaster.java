@@ -33,11 +33,17 @@ public class WindowMaster {
         //declaring variables to hold inputs from user
         String strHeight;
         String strWidth;
-        
+        String strGlassCost;
+        String strTrimCost;
+        String strNumberWindows;
+                
         //declaring other variables
         float area;
         float cost;
         float perimeter;
+        float glassCost;
+        float trimCost;
+        float numberWindows;
         
         //declaring and initializing scanner
         Scanner myScanner = new Scanner(System.in);
@@ -47,10 +53,19 @@ public class WindowMaster {
         strHeight = myScanner.nextLine();
         System.out.println("Please enter window width");
         strWidth = myScanner.nextLine();
+        System.out.println("Please enter glass cost");
+        strGlassCost = myScanner.nextLine();
+        System.out.println("Please enter trim cost");
+        strTrimCost = myScanner.nextLine();
+        System.out.println("Please enter number of windows");
+        strNumberWindows = myScanner.nextLine();
         
         //convert string values to floats
         height = Float.parseFloat(strHeight);
         width = Float.parseFloat(strWidth);
+        glassCost = Float.parseFloat(strGlassCost);
+        trimCost = Float.parseFloat(strTrimCost);
+        numberWindows = Float.parseFloat(strNumberWindows);
         
         //calculate area
         area = height * width;
@@ -59,7 +74,7 @@ public class WindowMaster {
         perimeter = (height * 2) + (width * 2);
         
         //calculate total cost
-        cost = area * 3.50f + perimeter * 2.25f;
+        cost = (area * glassCost + perimeter * trimCost) * numberWindows;
         
         //display results!
         System.out.println("Window height = " + strHeight);
