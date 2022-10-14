@@ -35,9 +35,11 @@ public class SummativeSums {
             //get the array as inputted, string : "{ X, X, X ..., X}"
             String arrayInput = scr.nextLine();
             
-            //make new string array containing arrayInput split at every comma
-            String[] arrayInputSplit = arrayInput.split(",");
+            arrayInput = arrayInput.substring(2, arrayInput.length() - 2);
             
+            //make new string array containing arrayInput split at every comma
+            String[] arrayInputSplit = arrayInput.split(", ");
+                        
             //make new int array to contain ints from arrayInputSplit
             int arrayInt[] = new int[arrayInputSplit.length];
             
@@ -47,13 +49,15 @@ public class SummativeSums {
             
             //go through arrayInputSplit converting each element to an integer and assigning it to arrayInt - DOESNT WORK
             for (int i = 0; i< arrayInputSplit.length; i++) {
-                arrayInt[i] = Integer.parseInt(arrayInputSplit[i]);
+                if (!arrayInputSplit[i].equals("{ ") || !arrayInputSplit[i].equals(" }")) {
+                    arrayInt[i] = Integer.parseInt(arrayInputSplit[i]);
+                }
             }
             
             int sum = arrayAdder(arrayInt);
             
             //checks if user has more arrays
-            System.out.println("#" + iterations + " Array Sum:" + sum);
+            System.out.println("#" + iterations + " Array Sum: " + sum);
             System.out.println("Do you have another array to sum up?");
             String hasArrayInput = scr.nextLine();
             
