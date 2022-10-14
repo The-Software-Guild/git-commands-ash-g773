@@ -18,7 +18,6 @@ public class SummativeSums {
      * adds them together
      * returns result
      * call method inside main and print out as #1 array sum etc
-     * INCOMPLETE
      */
    
     public static void main(String[] args) {
