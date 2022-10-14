@@ -22,7 +22,7 @@ public class SummativeSums {
      */
    
     public static void main(String[] args) {
-        //a way to input multiple arrays if needed, but calculates sum individually (aka one by one input
+        //a way to input multiple arrays if needed, but calculates sum individually (aka one by one input)
         boolean hasArray = true; 
         int iterations = 0;
         iterations++;
@@ -35,6 +35,8 @@ public class SummativeSums {
             //get the array as inputted, string : "{ X, X, X ..., X}"
             String arrayInput = scr.nextLine();
             
+            /*removing the curly bracket and space from the beginning and end
+                by selecting a substring that excludes those indices */
             arrayInput = arrayInput.substring(2, arrayInput.length() - 2);
             
             //make new string array containing arrayInput split at every comma
@@ -43,11 +45,7 @@ public class SummativeSums {
             //make new int array to contain ints from arrayInputSplit
             int arrayInt[] = new int[arrayInputSplit.length];
             
-            /*
-            need code here to remove the { and } from the first and last items in the array
-            */
-            
-            //go through arrayInputSplit converting each element to an integer and assigning it to arrayInt - DOESNT WORK
+            //go through arrayInputSplit converting each element to an integer and assigning it to arrayInt
             for (int i = 0; i< arrayInputSplit.length; i++) {
                 if (!arrayInputSplit[i].equals("{ ") || !arrayInputSplit[i].equals(" }")) {
                     arrayInt[i] = Integer.parseInt(arrayInputSplit[i]);
