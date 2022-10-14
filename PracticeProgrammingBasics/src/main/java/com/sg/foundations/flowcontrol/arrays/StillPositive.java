@@ -5,6 +5,8 @@
  */
 package com.sg.foundations.flowcontrol.arrays;
 
+import java.util.Arrays;
+
 /**
  *
  * @author ash_7
@@ -15,17 +17,18 @@ public class StillPositive {
         
         int[] numbers = {389, -47, 26, -485, 712, -884, 94 ,-64, 868, -776,
             227 ,-7, 44, 422, -109, 259, -500, 278, -219, 799, -311};
-        int[] posNums = null;
+        int posNums[] = new int[numbers.length];
+        
+        System.out.println("gotta be positive");
         
         for (int i=0; i<numbers.length; i++ ) {
             if (numbers[i] > 0 ) {
-                posNums[i] = numbers[i];
-                System.out.println(posNums);
+                int j = numbers[i];
+                System.out.print(numbers[i] + " ");
             }
         }
         
-        System.out.println("gotta be positive");
-        System.out.println(posNums);
+        
         
     }
 }
