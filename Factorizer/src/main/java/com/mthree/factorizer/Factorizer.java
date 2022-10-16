@@ -27,7 +27,7 @@ public class Factorizer {
         
         System.out.println("The factors of " + factorize + " are:");
         System.out.println("\n" + Arrays.toString(factorList));
-        System.out.println(factorize + " has " + factorList.length + " factors.");
+        System.out.println(factorize + " has " + (factorList.length+1) + " factors.");
         
         int factorSum = sumFactors(factorList);
         
@@ -37,7 +37,7 @@ public class Factorizer {
             System.out.println(factorize + " is not a perfect number.");
         }
         
-        if (factorList.length == 2) {
+        if (factorList.length == 1) {
             System.out.println(factorize + " is a prime number.");        
         } else {
             System.out.println(factorize + " is not a prime number.");
@@ -51,19 +51,16 @@ public class Factorizer {
         //create list to store factors
         int ans[] = new int[number];
         
-        //variable to count any empty and fully spaces
-        int zeros = 0;
+        //variable to count any full spaces
         int ansCount = 0;
         
         //checks from 1 to the number to see which the number is divisible by
         // and add it to factors list
-        for (int i = 1; i <= number; i++) {
+        for (int i = 1; i < number; i++) {
             if (number % i == 0) {
                 ans[i-1] = i;
                 ansCount++;
-            } else { //counts how many elements are zero
-                zeros++;
-            }
+            } 
         }
         
         //creates new list to copy accross everything but the zeros
