@@ -5,6 +5,8 @@
  */
 package com.sg.foundations.flowcontrol.arrays;
 
+import java.util.Arrays;
+
 /**
  *
  * @author ash_7
@@ -25,4 +27,8 @@ public class SimpleCombination {
         for (int i = 0; i < 12; i++) {
             wholeNumbers[i + 12] = secondHalf[i];
         }
+        
+        System.out.println("All together now!");
+        System.out.println(Arrays.toString(wholeNumbers));
+    }
 }
