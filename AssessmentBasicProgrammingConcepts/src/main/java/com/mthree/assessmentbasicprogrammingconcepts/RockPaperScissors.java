@@ -33,6 +33,7 @@ public class RockPaperScissors {
             int rounds;
         
             Scanner scr = new Scanner(System.in);
+            Game gameObj = new Game();
 
             System.out.println("Hey there! Let's play rock, paper, scissors "
                     + "- how many rounds would you like to play? (1-10)");
@@ -49,7 +50,7 @@ public class RockPaperScissors {
 
             //for each round, run playGame method and track score returned
             for (int i = 0; i < rounds; i++) {
-                score[i] = playGame();
+                score[i] = gameObj.playGame();
             }
             
             //sum wins ties and losses over the rounds using stored score array
@@ -95,35 +96,7 @@ public class RockPaperScissors {
     }
     
         
-    public static int playGame() {
-        Scanner scr2 = new Scanner(System.in);
-        Random compChooser = new Random();
-        
-        //choices from which computer can choose
-        int[] choices = {1, 2, 3};
-        
-        System.out.println("Choose! Type: \n1 for Rock\n2 for Paper\n3 for Scissors");
-        int userChoice = Integer.parseInt(scr2.nextLine());
-        
-        //the computer choosing rock (1), paper (2) or scissors (3) randomly
-        int compChoice = choices[compChooser.nextInt(choices.length)];
-        
-        int score = -1;
-        
-        //showing individual results of rounds and assigning value to score accordingly
-        if (userChoice == compChoice) {
-            System.out.println("ooo a tie!");
-            return score = 0;
-        } else if ((userChoice == 1 && compChoice == 3) || (userChoice == 2 && compChoice == 1) || (userChoice == 3 && compChoice == 2)) {
-            System.out.println("good job!");
-            return score = 1;
-        } else if ((userChoice == 3 && compChoice == 1) || (userChoice == 1 && compChoice == 2) || (userChoice == 2 && compChoice == 3)) {
-            System.out.println("ha! unlucky! computer chose " + compChoice);
-            return score = 2;
-        } else { 
-            return score;
-        }
-    }
+    
     
            
 
