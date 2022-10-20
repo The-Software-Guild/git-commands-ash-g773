@@ -53,32 +53,20 @@ public class InterestCalculator {
         //CurrentBalance * (1 + (QuarterlyInterestRate / 100))
         double next = 0;
         
+        YearlyCalculations yearCalcObj = new YearlyCalculations();
+        
         for (int i = 0; i < years; i++) {
             if (i == 0) {
-                next = yearlyCalculations((i+1), principal, annualInterest, compoundPeriodInt);
+                next = yearCalcObj.yearlyCalculations((i+1), principal, annualInterest, compoundPeriodInt);
             } else {
-                next = yearlyCalculations((i+1), next, annualInterest, compoundPeriodInt);
+                next = yearCalcObj.yearlyCalculations((i+1), next, annualInterest, compoundPeriodInt);
             }
             
         }
-    
     }
-    
-    public static double yearlyCalculations(int yearNum, double startAmount, double interestRate, int compounding) {
-        
-        double endAmount = startAmount * Math.pow((1 + (interestRate / compounding)), (compounding * yearNum));
-        double earned = endAmount - startAmount;
-        
-        System.out.println("\nYear " + yearNum + ":");
-        System.out.println("Began with $" + startAmount);
-        
-        //double earned = startAmount * interestRate;
-        System.out.println("Earned $" + earned);
-        
-        //double endAmount = startAmount + earned;
-        System.out.println("Ended with $" + endAmount);        
-        
-        return endAmount;
-    }
-    
 }
+
+    
+    
+    
+    
