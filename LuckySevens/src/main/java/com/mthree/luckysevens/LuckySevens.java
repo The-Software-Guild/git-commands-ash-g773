@@ -5,7 +5,6 @@
  */
 package com.mthree.luckysevens;
 
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -25,10 +24,11 @@ public class LuckySevens {
         int maxMoney = money;
         int maxMoneyRolls = 0;
         
+        Dice gameDice = new Dice();
         
         do {
             rolls++;
-            money = roll(money);
+            money = gameDice.roll(money);
                         
             if (money > maxMoney) {
                 maxMoneyRolls = rolls;
@@ -42,24 +42,6 @@ public class LuckySevens {
         
     }
     
-    public static int roll(int moneyIn) {
-        
-        Random dice = new Random();
-        
-        int diceRollOne = dice.nextInt(7);
-        int diceRollTwo = dice.nextInt(7);
-        int moneyOut = 0;
-        
-        if (diceRollOne + diceRollTwo == 7) {
-            moneyOut = moneyIn + 4;
-            System.out.println("win");
-        } else {
-            moneyOut = moneyIn - 1;
-            System.out.println("loss");
-        }
-        
-        System.out.println(moneyOut);
-        return moneyOut;
-    }
+    
     
 }
