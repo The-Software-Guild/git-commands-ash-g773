@@ -11,7 +11,7 @@ package com.mthree.factorizer;
  */
 public class FactorSum {
     
-    public static int sumFactors(int[] numbers) {
+    public int sumFactors(int[] numbers) {
         
         int ans = 0;
         

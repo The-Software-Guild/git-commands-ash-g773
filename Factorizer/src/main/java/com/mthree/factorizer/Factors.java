@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class Factors {
     
-    public static int[] factors(int number) {
+    public int[] factors(int number) {
         
         //create list to store factors
         int ans[] = new int[number];
